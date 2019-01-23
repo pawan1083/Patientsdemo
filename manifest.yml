@@ -1,0 +1,8 @@
+application :
+  name: Patientsdemo
+  buildpack: java_buildpack_offline
+  path : target\Patientsdemo.0.0.1.jar
+  memory : 1G
+  disk_quota: 1024M
+  instances: 1
+  route: Patientsdemo
