@@ -15,6 +15,8 @@ import javax.xml.ws.Response;
 import java.util.List;
 
 //@RestController("/patient")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://angular-project.cfapps.io")
 @Controller
 @RequestMapping("patient")
 public class PatientRestEndPoint {
@@ -27,6 +29,7 @@ public class PatientRestEndPoint {
         headers.setLocation(builder.path("/patient/{id}").buildAndExpand(patient.getPid()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
+
     @GetMapping("getallpatients")
     public ResponseEntity<List<Patient>> getAllPatient() {
         List<Patient> list = patientService.getAllPatient();

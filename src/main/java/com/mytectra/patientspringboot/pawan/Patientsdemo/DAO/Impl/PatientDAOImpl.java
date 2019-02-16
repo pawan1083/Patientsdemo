@@ -22,7 +22,7 @@ public class PatientDAOImpl implements PatientDAO {
     }
 
     public Patient getPatientById(int pid) {
-        String query = "SELECT PNAME,PAGE FROM PATIENT WHERE PID=?";
+        String query = "SELECT * FROM PATIENT WHERE PID=?";
         Patient patient = jdbcTemplate.queryForObject(query, new Object[]{pid}, new BeanPropertyRowMapper<>(Patient.class));
         return patient;
     }
